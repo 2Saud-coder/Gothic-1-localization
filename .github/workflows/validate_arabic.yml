@@ -1,0 +1,29 @@
+name: Arabic localization validation
+
+on:
+  push:
+    branches:
+      - arabic-localization
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile localization packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build localization packages
+        run: |
+          chmod +x .scripts/release.sh .scripts/dacode .scripts/vdfs
+          .scripts/release.sh
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gothic-1-localization-build
+          path: |
+            release/release/Gothic_1_Localized.zip
+            release/Gothic_1_Localized_code.zip
+          if-no-files-found: error
