@@ -5,26 +5,34 @@ This branch is the working branch for the Arabic localization of Gothic 1.
 ## Current state
 
 - All 30 translation CSV files from `.translations/en` have matching files under `.translations/ar`.
-- The Arabic locale is explicitly configured as UTF-8 in `.scripts/release.sh`.
-- Initial Arabic translation work has been added:
-  - `Menu.csv`: 174 Arabic entries; the remaining date/time placeholders are intentionally retained.
-  - `MOBSI.csv`: 20 Arabic entries.
-  - `Monsters.csv`: 34 Arabic creature names.
-  - `Text_Constants.csv`: 136 Arabic entries covering world objects, factions, spells, skills, and inventory categories.
-  - `Items.csv`: 150 Arabic item names/descriptions covering amulets, rings, runes, scrolls, potions, maps, and documents.
-  - `Log_Constants.csv`: 96 Arabic quest-log entries, trader hints, and trainer information.
-  - `Cutscenes.csv`: 54 Arabic lines across the opening, introductory dialogue, final prayer, and ending.
-- A validation script checks all 30 files for UTF-8 readability, matching CSV headers/row counts, and fuzzy markers on non-Arabic fallback entries.
-- A separate GitHub Actions workflow validates the CSVs and then attempts a full localization build on this branch.
-- Untranslated English fallback entries in the other files are marked `fuzzy=1` for review. They are not presented as completed Arabic translations.
+- Arabic is explicitly configured as UTF-8 in `.scripts/release.sh`.
+- The current working set contains approximately 1,338 Arabic entries across the following files:
+  - `Menu.csv`: 174 Arabic entries; only the day/time display placeholders remain in English.
+  - `MOBSI.csv`: all 20 interaction descriptions translated.
+  - `Monsters.csv`: all 65 creature names translated.
+  - `Text_Constants.csv`: 359 entries translated, covering world objects, factions, spells, skills, inventory, stats, armor, messages, and chapter titles.
+  - `Items.csv`: 150 item descriptions translated, covering amulets, rings, runes, scrolls, potions, maps, and documents.
+  - `Log_Constants.csv`: 96 quest-log entries, trader hints, and trainer information translated.
+  - `Cutscenes.csv`: all non-empty opening, introductory dialogue, final prayer, and ending lines translated.
+  - `Dia_OTHER.csv`: all 45 entries translated.
+  - `Dia_XARDASDEMON.csv`: all 34 entries translated.
+  - `Dia_EBR.csv`: all 144 entries translated.
+  - `Dia_NPC.csv`: all 197 NPC names and labels localized.
+- Non-Arabic fallback entries in the remaining files are marked `fuzzy=1` for review; they are not represented as completed translations.
+- `.scripts/validate_arabic.py` checks all 30 CSV files for UTF-8 readability, matching headers and row counts, and fuzzy markers on non-Arabic fallback entries.
+- `.github/workflows/validate_arabic.yml` runs the validator and then compiles localization packages on pushes to this branch.
 
-## Important technical validation still required
+## Build verification
 
-1. Run the upstream `dacode subs` and `dacode compile` pipeline for the `ar` locale.
-2. Confirm the UTF-8 font pack contains the required Arabic glyphs.
-3. Test Arabic glyph shaping, right-to-left ordering, punctuation, and mixed Arabic/Latin strings in-game.
-4. Replace English fallback strings with reviewed Arabic translations and clear their fuzzy flags only after review.
+A GitHub Actions build completed successfully on this branch and produced `G1_ar.mod` using UTF-8. The build log confirms that the Arabic locale was compiled and packed into the localization archive.
+
+## Important in-game validation still required
+
+1. Install the generated package and select the Arabic locale in GothicStarter.
+2. Confirm that the UTF-8 font pack contains the required Arabic glyphs.
+3. Test Arabic letter shaping, right-to-left ordering, punctuation, and mixed Arabic/Latin strings in-game.
+4. Continue replacing fuzzy English fallback strings with reviewed Arabic translations.
 
 ## Release status
 
-This is a development branch, not a finished release. A successful UTF-8 compile alone does not prove that Gothic 1 renders Arabic correctly. Do not merge or publish as a complete Arabic localization until the in-game font and RTL tests pass.
+This is a development branch, not a finished public release. A successful UTF-8 compile does not prove that Gothic 1 renders Arabic correctly. Do not merge or publish as a complete Arabic localization until the in-game font and RTL tests pass.
