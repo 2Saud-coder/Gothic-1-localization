@@ -11,7 +11,11 @@ This branch is the working branch for the Arabic localization of Gothic 1.
   - `MOBSI.csv`: 20 Arabic entries.
   - `Monsters.csv`: 34 Arabic creature names.
   - `Text_Constants.csv`: 136 Arabic entries covering world objects, factions, spells, skills, and inventory categories.
-  - `Cutscenes.csv`: opening, introductory dialogue, final prayer, and ending text have been translated.
+  - `Items.csv`: 150 Arabic item names/descriptions covering amulets, rings, runes, scrolls, potions, maps, and documents.
+  - `Log_Constants.csv`: 96 Arabic quest-log entries, trader hints, and trainer information.
+  - `Cutscenes.csv`: 54 Arabic lines across the opening, introductory dialogue, final prayer, and ending.
+- A validation script checks all 30 files for UTF-8 readability, matching CSV headers/row counts, and fuzzy markers on non-Arabic fallback entries.
+- A separate GitHub Actions workflow validates the CSVs and then attempts a full localization build on this branch.
 - Untranslated English fallback entries in the other files are marked `fuzzy=1` for review. They are not presented as completed Arabic translations.
 
 ## Important technical validation still required
