@@ -14,6 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate Arabic CSV files
+        run: python3 .scripts/validate_arabic.py
+
       - name: Build localization packages
         run: |
           chmod +x .scripts/release.sh .scripts/dacode .scripts/vdfs
