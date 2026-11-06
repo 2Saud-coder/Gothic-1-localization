@@ -28,6 +28,7 @@ get_encoding() {
         "tr") echo "cp1254" ;;
 
         # utf8
+        "ar") echo "utf8" ;;
         "zh_hant" | "zh_Hant") echo "utf8" ;;
         "zh_hans" | "zh_Hans") echo "utf8" ;;
         "cy") echo "utf8" ;;
