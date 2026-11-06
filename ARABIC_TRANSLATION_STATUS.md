@@ -6,7 +6,7 @@ This branch is the working branch for the Arabic localization of Gothic 1.
 
 - All 30 translation CSV files from `.translations/en` have matching files under `.translations/ar`.
 - Arabic is explicitly configured as UTF-8 in `.scripts/release.sh`.
-- The current working set contains approximately 1,567 Arabic entries across the following files:
+- The current working set contains approximately 1,728 Arabic entries across the following files:
   - `Menu.csv`: 174 Arabic entries; only the day/time display placeholders remain in English.
   - `MOBSI.csv`: all 20 interaction descriptions translated.
   - `Monsters.csv`: all 65 creature names translated.
@@ -19,6 +19,7 @@ This branch is the working branch for the Arabic localization of Gothic 1.
   - `Dia_EBR.csv`: all 144 entries translated.
   - `Dia_NPC.csv`: all 197 NPC names and labels localized.
   - `Dia_ORC.csv`: all 229 Tarrok, Ur-Shak, and orc-priest dialogue entries translated.
+  - `Dia_BAU.csv`: all 161 rice-farm, Horatio, and dam quest dialogue entries translated.
 - Non-Arabic fallback entries in the remaining files are marked `fuzzy=1` for review; they are not represented as completed translations.
 - `.scripts/validate_arabic.py` checks all 30 CSV files for UTF-8 readability, matching headers and row counts, and fuzzy markers on non-Arabic fallback entries.
 - `.github/workflows/validate_arabic.yml` runs the validator and then compiles localization packages on pushes to this branch.
