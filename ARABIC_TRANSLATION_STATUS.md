@@ -20,7 +20,7 @@ This branch is the working branch for the Arabic localization of Gothic 1.
   - `Dia_NPC.csv`: all 197 NPC names and labels localized.
   - `Dia_ORC.csv`: all 229 Tarrok, Ur-Shak, and orc-priest dialogue entries translated.
   - `Dia_BAU.csv`: all 161 rice-farm, Horatio, and dam quest dialogue entries translated.
-  - `Dia_GRD.csv`: first 115 of 875 guard dialogue entries translated, covering Bullit and Scorpio introductions, crossbow training, arena admission, betting, and fighter training. The remaining 760 entries are English fallback and marked for review.
+  - `Dia_GRD.csv`: first 155 of 875 guard dialogue entries translated, covering Bullit and Scorpio introductions, crossbow training, arena admission, betting, and fighter training. The remaining 720 entries are English fallback and marked for review.
 - Non-Arabic fallback entries in the remaining files are marked `fuzzy=1` for review; they are not represented as completed translations.
 - `.scripts/validate_arabic.py` checks all 30 CSV files for UTF-8 readability, matching headers and row counts, and fuzzy markers on non-Arabic fallback entries.
 - `.github/workflows/validate_arabic.yml` runs the validator and then compiles localization packages on pushes to this branch.
