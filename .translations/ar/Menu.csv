@@ -34,14 +34,10 @@
 "Scripts/system/MENU/menu_defines.d:97","Slot 13 - RETURN zum Laden des gespeicherten Spielstandes.","الخانة 13 - اضغط Enter لتحميل اللعبة المحفوظة.","","","MENU_LOAD_13","",""
 "Scripts/system/MENU/menu_defines.d:98","Slot 14 - RETURN zum Laden des gespeicherten Spielstandes.","الخانة 14 - اضغط Enter لتحميل اللعبة المحفوظة.","","","MENU_LOAD_14","",""
 "Scripts/system/MENU/menu_defines.d:99","Slot 15 - RETURN zum Laden des gespeicherten Spielstandes.","الخانة 15 - اضغط Enter لتحميل اللعبة المحفوظة.","","","MENU_LOAD_15","",""
-"Scripts/system/MENU/menu_log.d:42","Aktuelle\nMissionen","المهام
-الحالية","","","MENU_ITEM_SEL_MISSIONS_ACT.text[0]","",""
-"Scripts/system/MENU/menu_log.d:56","Erfüllte\nMissionen","المهام
-المكتملة","","","MENU_ITEM_SEL_MISSIONS_OLD.text[0]","",""
-"Scripts/system/MENU/menu_log.d:72","Gescheiterte\nMissionen","المهام
-الفاشلة","","","MENU_ITEM_SEL_MISSIONS_FAILED.text[0]","",""
-"Scripts/system/MENU/menu_log.d:88","Allgemeine\nInfos","معلومات
-عامة","","","MENU_ITEM_SEL_LOG.text[0]","",""
+"Scripts/system/MENU/menu_log.d:42","Aktuelle\nMissionen","المهام\nالحالية","","","MENU_ITEM_SEL_MISSIONS_ACT.text[0]","",""
+"Scripts/system/MENU/menu_log.d:56","Erfüllte\nMissionen","المهام\nالمكتملة","","","MENU_ITEM_SEL_MISSIONS_OLD.text[0]","",""
+"Scripts/system/MENU/menu_log.d:72","Gescheiterte\nMissionen","المهام\nالفاشلة","","","MENU_ITEM_SEL_MISSIONS_FAILED.text[0]","",""
+"Scripts/system/MENU/menu_log.d:88","Allgemeine\nInfos","معلومات\nعامة","","","MENU_ITEM_SEL_LOG.text[0]","",""
 "Scripts/system/MENU/menu_log.d:109","Act Missions","المهام الحالية","","","MENU_ITEM_LIST_MISSIONS_ACT.text[0]","",""
 "Scripts/system/MENU/menu_log.d:129","Old Missions","المهام السابقة","","","MENU_ITEM_LIST_MISSIONS_FAILED.text[0]","",""
 "Scripts/system/MENU/menu_log.d:149","Failed Missions","المهام الفاشلة","","","MENU_ITEM_LIST_MISSIONS_OLD.text[0]","",""
