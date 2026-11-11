@@ -4,3 +4,4 @@ file_path: ""
 file_include_globs:
   - "_work/Data/Scripts/_compiled/*.dat"
   - "_work/Data/Scripts/Content/CUTSCENE/OU.BIN"
+  - "Default.ttf"
