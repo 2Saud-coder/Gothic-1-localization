@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download Arabic font
+        run: |
+          mkdir -p .scripts/arabic-font
+          curl -fL --retry 3 "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansArabic/NotoSansArabic-Regular.ttf" -o .scripts/arabic-font/Default.ttf
+          curl -fL --retry 3 "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/OFL.txt" -o .scripts/arabic-font/OFL.txt
+
       - name: Validate Arabic CSV files
         run: python3 .scripts/validate_arabic.py
 
