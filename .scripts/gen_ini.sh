@@ -20,10 +20,6 @@ else
     O=""
 fi
 
-vdf_list="G1_base.mod  G1_fonts_${replacement_E}.mod  G1_${replacement_L}.mod"
-if [ "$replacement_L" == "ar" ]; then
-    vdf_list="$vdf_list  G1_arabic_font.mod"
-fi
 
 # Create the new file with the template text, replacing placeholders
 cat <<EOF | sed "s/\$L/${replacement_L}/g; s/\$E/${replacement_E}/g" > release/release/System/"$new_file_name"
@@ -36,7 +32,7 @@ Description=!<symlink>GothicLocalized.rtf
 Icon=0
 
 [FILES]
-vdf=$vdf_list
+vdf=G1_base.mod  G1_fonts_\$E.mod  G1_\$L.mod
 game=Content\Gothic
 fightai=Content\Fight
 menu=System\Menu
