@@ -70,12 +70,19 @@ for dir in release/langs/*; do
         mv "$dir"/system    "$dir"/_work/Data/Scripts/system
 
         LANG=$(basename "$dir")
+        if [ "$LANG" = "ar" ]; then
+            cp .scripts/arabic-font/Default.ttf "$dir/Default.ttf"
+        fi
         echo "Packing mod files for language $LANG"
 
         .scripts/vdfs -b "$dir" -c "Gothic 1 localization project ($LANG)" -o release/release/Data/modvdf/G1_$LANG.mod .scripts/g1.yml
     fi
 
 done
+
+mkdir -p release/release/System/Fonts
+cp .scripts/arabic-font/Default.ttf release/release/System/Fonts/Default.ttf
+cp .scripts/arabic-font/OFL.txt release/release/System/Fonts/OFL.txt
 
 cd release/release
 
