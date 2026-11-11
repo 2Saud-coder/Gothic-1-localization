@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# Check if the correct number of arguments is provided
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <replacement_L> <replacement_E>"
     exit 1
 fi
 
-# Variables
 new_file_base="GothicLocalized"
 replacement_L="$1"
 replacement_E="$2"
@@ -18,26 +16,26 @@ else
     O=""
 fi
 
-cat <<EOF | sed "s/\\$L/${replacement_L}/g; s/\\$E/${replacement_E}/g" > release/release/System/"$new_file_name"
+cat <<EOF | sed "s/\$L/${replacement_L}/g; s/\$E/${replacement_E}/g" > release/release/System/"$new_file_name"
 [INFO]
-Title=Gothic Localized (\\$L)
+Title=Gothic Localized (\$L)
 Version=1.08k_mod
 Authors=Various authors
-WebPage=https://weblate.cokoliv.eu/languages/\\$L/gothic-1/
+WebPage=https://weblate.cokoliv.eu/languages/\$L/gothic-1/
 Description=!<symlink>GothicLocalized.rtf
 Icon=0
 
 [FILES]
-vdf=G1_base.mod  G1_fonts_\\$E.mod  G1_\\$L.mod
-game=Content\\Gothic
-fightai=Content\\Fight
-menu=System\\Menu
-camera=System\\Camera
-music=System\\Music
-soundeffects=System\\SFX
-particleseffects=System\\ParticleFX
-visualeffects=System\\VisualFX
-outputunits=Content\\Cutscene\\OU
+vdf=G1_base.mod  G1_fonts_\$E.mod  G1_\$L.mod
+game=Content\Gothic
+fightai=Content\Fight
+menu=System\Menu
+camera=System\Camera
+music=System\Music
+soundeffects=System\SFX
+particleseffects=System\ParticleFX
+visualeffects=System\VisualFX
+outputunits=Content\Cutscene\OU
 
 [SETTINGS]
 player=PC_HERO
