@@ -44,7 +44,13 @@ echo "Substituting Gothic 1 Localizations..."
 mkdir -p release/{langs,release}
 cp -R .release/* release/release
 
-.scripts/dacode subs -i cp1252 -c "Scripts" -t ".translations" -p -e -o "release/langs"
+# Shape and reorder only a temporary build copy. Keep source translations readable.
+TRANSLATIONS_DIR="$(mktemp -d)"
+trap 'rm -rf -- "$TRANSLATIONS_DIR"' EXIT
+cp -R .translations/. "$TRANSLATIONS_DIR/"
+python3 .scripts/shape_arabic.py "$TRANSLATIONS_DIR/ar"
+
+.scripts/dacode subs -i cp1252 -c "Scripts" -t "$TRANSLATIONS_DIR" -p -e -o "release/langs"
 
 echo "Compiling Gothic 1 Localizations..."
 
