@@ -20,6 +20,9 @@ jobs:
           curl -fL --retry 3 "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansArabic/NotoSansArabic-Regular.ttf" -o .scripts/arabic-font/Default.ttf
           curl -fL --retry 3 "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/LICENSE" -o .scripts/arabic-font/OFL.txt
 
+      - name: Install Arabic shaping dependencies
+        run: python3 -m pip install arabic-reshaper==3.1.0 python-bidi==0.6.12
+
       - name: Validate Arabic CSV files
         run: python3 .scripts/validate_arabic.py
 
